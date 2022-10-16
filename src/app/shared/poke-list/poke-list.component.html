@@ -1,7 +1,7 @@
 <app-search-bar (emitSearch)="findPokemon($event)"></app-search-bar>
 
 <section class="list">
-  <div class="card" *ngFor="let pokemon of pokeList" (click)="detailPokemon(pokemon.details.id)">
+  <div class="card slide-right" [ngStyle]="{'animation-delay.s': i/10}" *ngFor="let pokemon of pokeList; let i = index" (click)="detailPokemon(pokemon.details.id)">
     <section class="card__details" *ngIf="pokemon.details">
       <h2 class="card__details__title">
         {{ pokemon.name }}

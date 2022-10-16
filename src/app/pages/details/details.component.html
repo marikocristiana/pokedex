@@ -4,10 +4,10 @@
   <div class="details__content" *ngFor="let pokemon of pokeDetails">
     <section class="title">
       <div>
-        <h1 class="title__under">{{ pokemon.japanese }}</h1>
-        <h2 class="title__over">{{ pokemon.name }}</h2>
+        <h1 class="title__under slide-left">{{ pokemon.japanese }}</h1>
+        <h2 class="title__over slide-right">{{ pokemon.name }}</h2>
       </div>
-      <img [src]="pokemon.sprites.front_default">
+      <img [src]="pokemon.sprites.front_default" class="slide-down">
     </section>
     <section class="card">
       <h3 class="card__title">Estatísticas</h3>
