@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import 'styles/variables.scss';
+
+* {
+  font-family: 'VT323', monospace;
+}
+
+body {
+  background-color: $primary-background-color;
+}

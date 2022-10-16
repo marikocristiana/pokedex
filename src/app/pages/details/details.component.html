@@ -1,19 +1,23 @@
-<main *ngIf="!error">
-  <div *ngFor="let pokemon of pokeDetails">
-    <section>
-      <h1>{{ pokemon.japanese }}</h1>
-      <h2>{{ pokemon.name }}</h2>
+<app-header></app-header>
+
+<main class="details" *ngIf="!error">
+  <div class="details__content" *ngFor="let pokemon of pokeDetails">
+    <section class="title">
+      <div>
+        <h1 class="title__under">{{ pokemon.japanese }}</h1>
+        <h2 class="title__over">{{ pokemon.name }}</h2>
+      </div>
       <img [src]="pokemon.sprites.front_default">
     </section>
-    <section>
-      <h3>Estatísticas</h3>
-      <ul>
-        <li *ngFor="let value of pokemon.stats">
+    <section class="card">
+      <h3 class="card__title">Estatísticas</h3>
+      <ul class="card__list">
+        <li class="card__list__stat" *ngFor="let value of pokemon.stats">
           <span>{{ value.stat.name }}</span>
           <span>{{ value.base_stat }}</span>
         </li>
       </ul>
-      <button (click)="generalPokemon()">Voltar</button>
+      <button class="button" (click)="generalPokemon()">Voltar</button>
     </section>
   </div>
 </main>
