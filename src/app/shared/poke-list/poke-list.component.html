@@ -2,7 +2,7 @@
 
 <section>
   <div *ngFor="let pokemon of pokelist">
-    <div *ngIf="pokemon.details && !error">
+    <div (click)="detailPokemon(pokemon.name)" *ngIf="pokemon.details && !error">
       <section>
         <h2>
           {{ pokemon.name }}
