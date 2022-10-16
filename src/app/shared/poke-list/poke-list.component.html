@@ -1,8 +1,8 @@
 <app-search-bar (emitSearch)="findPokemon($event)"></app-search-bar>
 
-<section>
+<section *ngIf="!error">
   <div *ngFor="let pokemon of pokeList">
-    <div (click)="detailPokemon(pokemon.details.id)" *ngIf="pokemon.details && !error">
+    <div (click)="detailPokemon(pokemon.details.id)" *ngIf="pokemon.details">
       <section>
         <h2>
           {{ pokemon.name }}
@@ -20,8 +20,4 @@
   </div>
 </section>
 
-<section *ngIf="error">
-  <h1>Ops, Pokedex Parou de Funcionar!</h1>
-  <h3>Tente Novamente...</h3>
-  <img src="assets/error.png" alt="gastly">
-</section>
+<app-error *ngIf="error"></app-error>

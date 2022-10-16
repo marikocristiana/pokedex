@@ -10,6 +10,7 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 export class DetailsComponent implements OnInit {
 
   public pokeDetails: Array<any> = [];
+  public error:       boolean    = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,8 +21,12 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.pokeApiService.getPokemon(id).subscribe({
-      next:  (res) => this.pokeDetails = [res],
-      error: (err) => err
+      next:  (res) => {
+        this.pokeDetails = [res];
+      },
+      error: (err) => {
+        this.error = true;
+      }
     });
   }
 

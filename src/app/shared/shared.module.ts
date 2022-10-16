@@ -5,17 +5,20 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { PokeListComponent } from './poke-list/poke-list.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     SearchBarComponent,
-    PokeListComponent
+    PokeListComponent,
+    ErrorComponent
   ],
   exports: [
     HeaderComponent,
     SearchBarComponent,
-    PokeListComponent
+    PokeListComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule

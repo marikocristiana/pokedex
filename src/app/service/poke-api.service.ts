@@ -34,8 +34,8 @@ export class PokeApiService {
         [res].map((pokemon: any) => {
           this.http.get(pokemon.species.url).subscribe(
             (res: any) => pokemon.japanese = res.names[9].name
-          )
-        })
+          );
+        });
       })
     );
   }
