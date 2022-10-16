@@ -11,7 +11,7 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent implements OnInit {
 
-  public pokelist: Array<any> = [];
+  public pokeList: Array<any> = [];
   public pokedex:  Array<any> = [];
   public error:    boolean    = false;
 
@@ -24,7 +24,7 @@ export class PokeListComponent implements OnInit {
     this.pokeApiService.getPokedex().subscribe({
       next:  (res) => {
         this.pokedex  = res.results;
-        this.pokelist = res.results;
+        this.pokeList = res.results;
       },
       error: (err) => {
         this.error = true;
@@ -33,7 +33,7 @@ export class PokeListComponent implements OnInit {
   }
 
   public findPokemon(event: string): void {
-    this.pokelist = this.pokedex.filter((pokemon: any) => {
+    this.pokeList = this.pokedex.filter((pokemon: any) => {
       return pokemon.name.startsWith(event.toLowerCase());
     });
   }

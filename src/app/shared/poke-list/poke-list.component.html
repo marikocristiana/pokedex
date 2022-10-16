@@ -1,8 +1,8 @@
 <app-search-bar (emitSearch)="findPokemon($event)"></app-search-bar>
 
 <section>
-  <div *ngFor="let pokemon of pokelist">
-    <div (click)="detailPokemon(pokemon.name)" *ngIf="pokemon.details && !error">
+  <div *ngFor="let pokemon of pokeList">
+    <div (click)="detailPokemon(pokemon.details.id)" *ngIf="pokemon.details && !error">
       <section>
         <h2>
           {{ pokemon.name }}
