@@ -1,0 +1,77 @@
+@import '../../../styles/variables.scss';
+
+.list {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em 0;
+
+}
+
+.card {
+
+  display: flex;
+  flex-shrink: 1;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  width: calc(50% - 2em);
+  margin: 0.5em 0;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 1em;
+  border: outset $secondary-background-color;
+  background-color: $secondary-background-color;
+
+  &__details {
+
+    width: 100%;
+    padding: 1em;
+
+    &__title {
+      margin: 0;
+      color: $tertiary-font-color;
+      font-style: italic;
+      font-size: 1.75em;
+      text-transform: capitalize;
+    }
+
+    &__list {
+
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      &__type {
+
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        margin: 0.25em 0;
+        border-radius: 1em;
+        color: $primary-font-color;
+        background-color: rgba($color: $secondary-button-color, $alpha: 0.8);
+
+      }
+
+    }
+
+  }
+
+  img {
+    width: 8em;
+    background: url('../../../assets/under.svg') no-repeat center;
+    image-rendering: pixelated;
+  }
+
+  &:hover {
+    cursor: zoom-in;
+    border: inset $secondary-background-color;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+
+}

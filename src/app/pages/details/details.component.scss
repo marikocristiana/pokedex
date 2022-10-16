@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  color: $secondary-font-color;
+  color: $primary-font-color;
 
   img {
     width: 13em;
@@ -54,7 +54,7 @@
   &__title {
     margin: 0.5em 0;
     font-size: 1.5em;
-    color: $tertiary-font-color;
+    color: $secondary-font-color;
     text-decoration: overline;
   }
 
@@ -83,9 +83,9 @@
   background-color: $primary-button-color;
 
   &:hover {
-    background-color: $secundary-button-color;
-    color: $secondary-font-color;
-    border: inset $secundary-button-color;
+    background-color: $secondary-button-color;
+    color: $primary-font-color;
+    border: inset $secondary-button-color;
   }
 
 }

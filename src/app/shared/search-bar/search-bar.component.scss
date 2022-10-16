@@ -1,1 +1,34 @@
 @import 'material-icons/iconfont/material-icons.css';
+@import '../../../styles/variables.scss';
+
+.search {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  border-radius: 1em;
+  background-color: rgba($color: $secondary-background-color, $alpha: 0.2);
+
+  &__bar {
+
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.5em;
+    outline: none;
+    border: none;
+    background: none;
+    color: $primary-font-color;
+
+    &::placeholder {
+      color: rgba($color: $primary-font-color, $alpha: 0.5);
+    }
+
+  }
+
+}
+
+.material-icons {
+  margin: 0 0.5em;
+  color: $primary-font-color;
+}

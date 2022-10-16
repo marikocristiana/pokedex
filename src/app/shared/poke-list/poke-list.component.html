@@ -1,22 +1,20 @@
 <app-search-bar (emitSearch)="findPokemon($event)"></app-search-bar>
 
-<section *ngIf="!error">
-  <div *ngFor="let pokemon of pokeList">
-    <div (click)="detailPokemon(pokemon.details.id)" *ngIf="pokemon.details">
-      <section>
-        <h2>
-          {{ pokemon.name }}
-        </h2>
-        <ul>
-          <li *ngFor="let value of pokemon.details.types">
-            {{ value.type.name }}
-          </li>
-        </ul>
-      </section>
-      <section>
-        <img [src]="pokemon.details.sprites.front_default" [alt]="pokemon.name">
-      </section>
-    </div>
+<section class="list">
+  <div class="card" *ngFor="let pokemon of pokeList" (click)="detailPokemon(pokemon.details.id)">
+    <section class="card__details" *ngIf="pokemon.details">
+      <h2 class="card__details__title">
+        {{ pokemon.name }}
+      </h2>
+      <ul class="card__details__list">
+        <li class="card__details__list__type" *ngFor="let value of pokemon.details.types">
+          {{ value.type.name }}
+        </li>
+      </ul>
+    </section>
+    <section *ngIf="pokemon.details">
+      <img [src]="pokemon.details.sprites.front_default" [alt]="pokemon.name">
+    </section>
   </div>
 </section>
 
